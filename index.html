@@ -19,6 +19,15 @@
         .container {
             max-width: 600px;
             margin: auto;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
         }
         h1 {
             color: #0874e0;
@@ -34,10 +43,33 @@
         .links {
             margin-top: 20px;
         }
+        @keyframes rainbow {
+            0% { color: #ff0000; }
+            16.6% { color: #ff7f00; }
+            33.3% { color: #ffff00; }
+            50% { color: #00ff00; }
+            66.6% { color: #0000ff; }
+            83.3% { color: #4b0082; }
+            100% { color: #8b00ff; }
+        }
+        .projects h2 {
+            animation: rainbow 3s infinite;
+        }
+        .projects ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .projects li:before {
+            content: "✦ "; /* You can replace this with any other symbol like ◆, ➤, etc. */
+            color: #00FF00; /* Adjust the color if needed */
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="header">
+            <img src="https://prnt.sc/9LQZSwiZaSaR" alt="Profile Picture">
+        </div>
         <h1>I'm Mirsad "Wixob" Özgen</h1>
         <p>Wixob</p>
         <p>Enthusiast of low-level programming and the art of reverse engineering.</p>
