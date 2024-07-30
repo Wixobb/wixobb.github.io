@@ -22,17 +22,20 @@
             padding: 20px;
         }
         .header {
-            text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 20px; 
+            text-align: center; 
         }
         .header img { 
             width: 150px; 
             height: 150px;
             object-fit: cover; 
-            margin-top: 30px;
+            display: block; 
+            margin: 0 auto 20px auto; 
         }
         h1 {
             color: #0381ff;
+            margin-bottom: 0;
+            text-align: center;
         }
         .highlight {
             animation: rainbow 3s infinite;
@@ -71,20 +74,12 @@
 <body>
     <div class="header">
         <img src="abcd.jpg"> 
+        <h1>I'm Mirsad "<span class="highlight">Wixob</span>" Özgen</h1> 
     </div>
-    <div class="container">
-        <h1>I'm Mirsad "<span class="highlight">Wixob</span>" Özgen</h1>
+    <div class="container"> 
         <p>Wixob</p>
         <p>Enthusiast of low-level programming and the art of reverse engineering.</p>
         <p>> currently he is on vacation</p>
-
-        <div class="projects">
-            <h2>Projeler</h2>
-            <ul>
-                <li><a href="https://github.com/Wixobb/Python-Denemeleri/tree/main/SomMath" target="_blank">SomMath</a></li>
-                <li><a href="https://github.com/Wixobb/Python-Denemeleri/tree/main/PrimeCalc" target="_blank">PrimeCalc</a></li>
-            </ul>
-        </div>
 
         <div class="links">
             <h2>Contact</h2>
@@ -93,6 +88,14 @@
                 <li><a href="https://x.com/TheCubes9" target="_blank">Twitter</a></li>
             </ul>
         </div>
+        <div class="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="https://github.com/Wixobb/Python-Denemeleri/tree/main/SomMath" target="_blank">SomMath</a></li>
+                <li><a href="https://github.com/Wixobb/Python-Denemeleri/tree/main/PrimeCalc" target="_blank">PrimeCalc</a></li>
+            </ul>
+        </div>
+
     </div>
 </body>
 </html>
