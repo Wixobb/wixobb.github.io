@@ -1,5 +1,5 @@
 # Project repository Pages URL. Keep the trailing slash for correct links and assets.
-baseURL = "https://wixobb.github.io/portfolyo-sitem/"
+baseURL = "https://wixobb.github.io/mirfolio/"
 title = "Mirfolio"
 theme = "PaperMod"
 languageCode = "en-us"
