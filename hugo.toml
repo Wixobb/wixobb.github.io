@@ -1,9 +1,9 @@
-baseURL = "xxx"
+baseURL = "https://wixobb.github.io/"
 title = "Mirfolio"
 theme = "PaperMod"
 languageCode = "en-us"
 
-# Sayfalamayı belirler (Ana sayfada kaç post görünecek)
+
 [pagination]
   pagerSize = 5
 
@@ -43,14 +43,3 @@ languageCode = "en-us"
   url = "/posts/"
   weight = 10
 
-[[menu.main]]
-  identifier = "projects"
-  name = "Projects"
-  url = "/projects/"
-  weight = 20
-
-[[menu.main]]
-  identifier = "tags"
-  name = "Tags"
-  url = "/tags/"
-  weight = 30
