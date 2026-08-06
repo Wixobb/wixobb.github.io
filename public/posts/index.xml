@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Mirfolio</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Mirfolio</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Jul 2026 14:20:03 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GaN Devrimi</title>
+      <link>http://localhost:1313/posts/gan-devrimi/</link>
+      <pubDate>Sun, 05 Jul 2026 14:20:03 +0300</pubDate>
+      <guid>http://localhost:1313/posts/gan-devrimi/</guid>
+      <description>&lt;p&gt;Güç elektroniği hep ilgimi çekmiştir. Başlayalım bakalım nereye doğru gideceğiz.&lt;/p&gt;
+&lt;h2 id=&#34;silisyumun-sınırı&#34;&gt;Silisyumun Sınırı&lt;/h2&gt;
+&lt;p&gt;Güç elektroniğindeki ana amaç nedir? En özet tabirle &amp;ldquo;enerjiyi&amp;rdquo; işlemektir. Fişten gelen 220 voltu alıp telefonunuzun narin bataryasına uygun şekilde 5 volta düşürmektir. Bunu yaparken de olabildiğince az kayıplı çalışmak, yüksek gerilime karşı dimdik ayakta durmak ve bu işi milyonlarca kez tekrarlamaktır.&lt;/p&gt;
+&lt;p&gt;On yıllar boyunca bu işin ustası silisyumdu (Si). Ucuzdu, boldu ve işlenmesi kolaydı. Ama siz gücü artırdıkça silisyumun atomik yapısından kaynaklı sorunlar ortaya çıkmaya başlar. Yüksek voltaj ve akımla boğuşan transistörün savaşması gereken iki temel düşman vardır:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

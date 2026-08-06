@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>GaN Devrimi | Mirfolio</title>
+<meta name="keywords" content="">
+<meta name="description" content="Güç elektroniği hep ilgimi çekmiştir. Başlayalım bakalım nereye doğru gideceğiz.
+Silisyumun Sınırı
+Güç elektroniğindeki ana amaç nedir? En özet tabirle &ldquo;enerjiyi&rdquo; işlemektir. Fişten gelen 220 voltu alıp telefonunuzun narin bataryasına uygun şekilde 5 volta düşürmektir. Bunu yaparken de olabildiğince az kayıplı çalışmak, yüksek gerilime karşı dimdik ayakta durmak ve bu işi milyonlarca kez tekrarlamaktır.
+On yıllar boyunca bu işin ustası silisyumdu (Si). Ucuzdu, boldu ve işlenmesi kolaydı. Ama siz gücü artırdıkça silisyumun atomik yapısından kaynaklı sorunlar ortaya çıkmaya başlar. Yüksek voltaj ve akımla boğuşan transistörün savaşması gereken iki temel düşman vardır:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/gan-devrimi/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.564d61a4f349dd737f3b0d377d187b4908d494554a48dcef2e6f415d2cc12d4b.css" integrity="sha256-Vk1hpPNJ3XN/Ow03fRh7SQjUlFVKSNzvLm9BXSzBLUs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/gan-devrimi/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+
+<script
+id="MathJax-script"
+async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Mirfolio (Alt + H)">Mirfolio</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      GaN Devrimi
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-07-05 14:20:03 +0300 +03'>July 5, 2026</span>&nbsp;·&nbsp;<span>10 min</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>Güç elektroniği hep ilgimi çekmiştir. Başlayalım bakalım nereye doğru gideceğiz.</p>
+<h2 id="silisyumun-sınırı">Silisyumun Sınırı<a hidden class="anchor" aria-hidden="true" href="#silisyumun-sınırı">#</a></h2>
+<p>Güç elektroniğindeki ana amaç nedir? En özet tabirle &ldquo;enerjiyi&rdquo; işlemektir. Fişten gelen 220 voltu alıp telefonunuzun narin bataryasına uygun şekilde 5 volta düşürmektir. Bunu yaparken de olabildiğince az kayıplı çalışmak, yüksek gerilime karşı dimdik ayakta durmak ve bu işi milyonlarca kez tekrarlamaktır.</p>
+<p>On yıllar boyunca bu işin ustası silisyumdu (Si). Ucuzdu, boldu ve işlenmesi kolaydı. Ama siz gücü artırdıkça silisyumun atomik yapısından kaynaklı sorunlar ortaya çıkmaya başlar. Yüksek voltaj ve akımla boğuşan transistörün savaşması gereken iki temel düşman vardır:</p>
+<p>$$ P_{\text{toplam}} \approx P_{\text{iletim}} + P_{\text{anahtarlama}} $$</p>
+<p>Silisyumun diz çöktüğü yer ilk kısım olan &ldquo;İletim kaybı&rdquo; kısmıdır. Bunun da tek sorumlusu <strong>$R_{\text{DS(on)}}$</strong> kavramıdır. Karmaşık harf yığınlarını sevmem, parçalayalım.</p>
+<ul>
+<li>R: Direnç</li>
+<li>D ve S: Drain&amp;Source -&gt; Akımın girdiği ve çıktığı kapılar</li>
+<li>on: Transistörün açık yani akım geçişine izin vermesi</li>
+</ul>
+<p>Bir transistörü &ldquo;ON&rdquo; hale getirdiğinizde içi kusursuz bir iletkene mi dönüşür? Keşke. Elektronlar transistörün Source kısmından girip Drain kısmından çıkana kadar silisyum atomlarının kapladığı sıkışık bir caddeyi geçmek zorundadır. İşte malzemenin elektron geçişine gösterdiği bu dirence $R_{\text{DS(on)}}$ diyoruz. Direnç ne anlama gelir? Isı anlamına gelir. Transistörden geçen akım arttıkça bu dirençle çarpışıp ortaya çıkan sıcaklık ($P = I^2 \times R_{\text{DS(on)}}$) denklemden görüldüğü üzere karesel olarak büyür. Siz bunu nasıl hissedersiniz? Cihazının alev topuna döner.</p>
+<p>Çıkmaz sokağa doğru ilerliyoruz. Silisyum nasıl iletken hale getirilir? Saf silisyum güzel bir yalıtkandır. İletken hale getirmek için fosfor, bor veya arsenik gibi yabancı atomlar enjekte edilir. Bu işleme <strong>Doping</strong>, bu yabancı atomlara da <strong>dopant atomlar</strong> denir. Bundan ne kadar çok eklerseniz o kadar fazla serbest elektronunuz olur, iletkenliğiniz artar ve $R_{\text{DS(on)}}$ düşer. &ldquo;O zaman çözüm basit, çok fazla dopant basıp direnç sıfırlayalım.&rdquo; Keşke. Güç elektroniği sınırlarında gezindiğimiz için transistörlerden sadece iletken olmalarını istemeyiz. OFF konumdayken gelen devasa gerilimi patlamadan bloklamalarını isteriz.</p>
+<p>Silisyumda bunun için yapabileceğimiz şey fiziksel güvenlik bariyeri olarak <strong>Drift Region</strong> inşa etmek. Yüksek voltaj burayı delip geçmesin diye 2 şey yaparsınız:</p>
+<ol>
+<li><strong>Uzun yaparsınız.</strong></li>
+<li><strong>Dopant atomları seyreltirsiniz.</strong></li>
+</ol>
+<p>İşte trajedi tam da bu noktada ortaya çıkar. Cihaz kapalıyken voltaja dayanmak için uzun ve dopant fakiri bir yol yaptınız. Peki cihazı <strong>açmak</strong> isterseniz ne olur? Elektronlar bu iğrenç yoldan geçmek zorunda kalır ve $R_{\text{DS(on)}}$ yukarı fırlar. Bundan kaynaklanan sıcaklığı engellemek için de çirkin ve ağır heatsink&rsquo;ler koymak zorunda kalacaksınız. Ve ortaya tuğla gibi eski laptop adaptörleri çıkacak.</p>
+<p>Mühendisler yıllarca bununla uğraştı. Ama çarptıkları duvar artık mühendislikle değil malzemenin yapısıyla alakalıydı. Çünkü silisyumun atomik yapısının elektriksel olarak delinmeden dayanabildiği en üst sınır sadece (kritik elektrik alan) <strong>0,3 MV/cm</strong> idi. Direnci düşürmek için Drift Region&rsquo;u biraz bile kısaltırsanız 600 volt silikonu deler geçer (buna <strong>avalanche breakdown</strong> denir) ve cihazınız mahvolur.</p>
+<p>Bu işi çözmemiz lazım. Kritik elektrik alan dedim. Elektrik alan nedir? Voltajın belirli bir mesafeye sıkışmasıdır. 2 uç arasına 600 volt uygularsanız o kısacık aralığın içindeki elektronları yerinden sökmeye çalışan devasa bir <strong>elektriksel rüzgar</strong> elde edersiniz. (bilimsel olarak pek doğru sayılmaz ama akılda kalıcı)</p>
+<p>İşte kritik elektrik alan, malzemenin atomik bağlarının bu rüzgara dayanamayıp pes ettiği nihai kırılma noktasıdır. Eğer bu sınırı aşarsanız <strong>impact ionization</strong> süreci başlar. Elektron kopup fırlar, başka bir atoma çarpıp ondan elektron kopartır. Bu zincirleme süreç ortalığı mahveder ve yalıtkan olması gereken malzeme kontrolsüzce kısa devre olup kendini yakar.</p>
+<p>Şimdi bu işi <strong>bandgap</strong> kavramı ile bağlayacağız. Elektronlar normal şartlarda çekirdeğe bağlıdır. Bu sakin hallerine <strong>Valence Band</strong> denir. Bu haldeki malzeme yalıtkandır. Elektronların serbest kalıp akım oluşturabilmesi için <strong>Conduction Band</strong> kısmına sıçraması gerekir. Bu ikili arasındaki enerji uçurumuna da <strong>Bandgap</strong> denir.</p>
+<figure>
+    <img loading="lazy" src="bandgap1.webp"/> <figcaption>
+            Şekil 1: Silisyum ve GaN atomlarının iletkenlik için aşması gereken enerji bariyerleri (Bandgap).
+        </figcaption>
+</figure>
+
+<p>Peki silisyumun problemi nedir? Bandgap değeri düşüktür, sadece 1.12 eV. Siz cihaz OFF konumdayken elektriksel rüzgarı verdiniz, bu rüzgar elektronları kolayca bu aralıktan yukarı iter. Drift Region&rsquo;u uzatıp dopantları seyreltmemizin ana sebebi bu aralığın bu kadar ufak olmasıdır.</p>
+<p>GaN ne alaka peki? GaN atomlarının bant aralığı 3.4 eV değerindedir. Yani bir elektronun kopup çığ başlatması için çok daha fena bir rüzgar gerekir. Bu yüzden de GaN kritik elektrik alanı ($E_{crit}$) <strong>3.3 MV/cm</strong>. Silisyumun tam <strong>11 katı</strong>. Bu ne işimize yarar?</p>
+<p>Bir cihazın kırılma gerilimi (yani dayanabileceği maksimum voltaj) malzemenin kritik dayanıklılığı <strong>($E_{crit}$)</strong> ile içindeki yolun uzunluğunun <strong>($L$)</strong> çarpımına eşittir: <strong>$V_{BR} = E_{crit} \times L$</strong></p>
+<p>Yani aynı 600 voltu bloklamak istiyorsan GaN 11 kat daha dayanıklı olduğu için silisyuma kıyasla 11 kat daha kısa bir yol yapabilirsin. Yani çip <strong>küçüldü</strong>.</p>
+<p>Küçülme kavramı hepinizin bildiği üzere çipler konusunda çok önemlidir. GaN sayesinde başardığımız küçülme bu noktada bize <strong>parazitik kapasitansı</strong> ortadan kaldırma konusunda yardım edecek. Her transistörün içinde, üretiminden kaynaklı mikroskobik hayalet kondansatörler vardır. Bunlar parazitik kapasitansa sebep olur. Çip ne kadar büyükse, bu plakaların alanı o kadar büyür ve hayalet kapasitans artar. Bir transistörü &ldquo;Açık&rdquo; (ON) duruma getirmek için önce bu hayalet kondansatörü elektronlarla (şarjla) doldurmanız gerekir. &ldquo;Kapalı&rdquo; (OFF) duruma getirmek için
+de o yükü boşaltmalısınız.</p>
+<blockquote>
+<p>Silisyumda çip büyüktür. Hayalet kondansatör de <strong>kova</strong> gibidir. Doldurup boşaltmak zaman alır, buna <strong>switching loss</strong> denir.</p></blockquote>
+<blockquote>
+<p>GaN ise küçüktür. Hayalet kondansatör <strong>kahve fincanı</strong> gibidir. Fincanı çok hızlı doldurup boşaltabilirsiniz. İşte bu sayede GaN transistörler MHz mertebesine ulaşabilir.</p></blockquote>
+<figure>
+    <img loading="lazy" src="capacitance-analogy.jpg"/> <figcaption>
+            Şekil 2: Parazitik kapasitansı doldurmak (şarj etmek) GaN transistörlerde çok daha az yük gerektirir.
+        </figcaption>
+</figure>
+
+<p>Yani elimizde şu harika zincir mevcut:</p>
+<blockquote>
+<p>Geniş bandgap çipi küçültür -&gt; Çip küçülünce parazit kapasitans düşer -&gt; Kapasitans düşünce yüksek frekansta açılıp-kapanma mümkün olur -&gt; Frekans yükseldiği için de aynı güç dönüşümü için gereken bobin ve indüktör boyutu küçülebilir.</p></blockquote>
+<h2 id="hemt-ve-2deg-vip-otoyol">HEMT ve 2DEG: VIP Otoyol<a hidden class="anchor" aria-hidden="true" href="#hemt-ve-2deg-vip-otoyol">#</a></h2>
+<p>Silisyumu iletken yapmak için katkı atomları dökmüştük yola, bunun da elektronların çarpıp sürtünme yaratmasına sebep olduğunu söylemiştik. GaN için bu böyle mi? Değil. <strong>HEMT</strong> kullanıyorlar.</p>
+<p>HEMT mimarisinde elektronların geçtiği yola tek bir katkı atomu bile konmaz. GaN HEMT yapısında saf GaN tabakası üzerine çok ince AlGaN (Alüminyum Galyum Nitrür) tabakası eklenir. Bu iki malzemenin kristal yapıları (atomlar arası mesafeleri) birbirine tam uymaz. AlGaN atomları GaN&rsquo;a tutunabilmek için esnemek ve gerilmek zorunda kalır. Bu gerilim, (tıpkı bir çakmağın manyetosundaki gibi) devasa bir piezoelektrik polarizasyon yaratır. Buna malzemelerin kendi doğasından gelen kendiliğinden (spontaneous) polarizasyon da eklenince, iki malzemenin tam birleştiği o mikroskobik sınırda (arayüzde) devasa bir pozitif elektrik alanı oluşur. Bu pozitif alan, çevredeki tüm serbest elektronları dev bir mıknatıs gibi o incecik sınıra doğru çeker.</p>
+<p>İşte bu birleşme noktasında biriken elektron yoğunluğuna <strong>2DEG</strong> (Two-Dimensional Electron Gas / İki Boyutlu Elektron Gazı) diyoruz.</p>
+<figure>
+    <img loading="lazy" src="hemt-2deg.webp"/> <figcaption>
+            Şekil 3: AlGaN ve GaN katmanlarının birleştiği o incecik sınırda oluşan sürtünmesiz 2DEG otoyolu.
+        </figcaption>
+</figure>
+
+<blockquote>
+<p>Neden 2 boyut? Çünkü elektronlar dikey eksende bir &ldquo;Kuantum Kuyusu&quot;na hapsolmuşlardır. Yukarı çıkıp AlGaN&rsquo;a geçemezler, aşağı inip GaN&rsquo;ın derinliklerine düşemezler. Sadece atomik incelikteki bu yatay düzlemde sağa ve sola gidebilirler.</p></blockquote>
+<blockquote>
+<p>Neden gaz? Elektronlar, bir tüpün içindeki gaz molekülleri gibi hiçbir şeye çarpmadan, sürtünmesizce ve inanılmaz bir hızla Source&rsquo;dan Drain&rsquo;e akarlar çünkü sürtünecek kimse yok.</p></blockquote>
+<p>Tabi her gülün dikeni olduğu gibi bu noktada da bazı sorunlarımız var.</p>
+<p>Klasik bir silikon transistörde, siz Gate terminaline voltaj verene kadar kanal kapalıdır. Yani siz emretmeden elektrik geçmez. Buna Normally-Off veya E-Mode denir. Fakat HEMT yapısında o muazzam 2DEG otoyolu, sırf AlGaN ve GaN üst üste konduğu için doğal olarak oluşur. Yani Gate&rsquo;e hiçbir voltaj vermeseniz bile otoyol açıktır ve akım akar. Buna Normally-On (Normalde Açık) veya D-Mode (Depletion-Mode) denir. Cihazı güç kaynağına taktığınız anda kısa devreyi yersiniz (Bazı RF uygulamalarında veya baz istasyonlarında işe yarayabilir aslında bu durum. Bir ara bakarım belki). Çözüm basit ama zarif: p-GaN Gate.</p>
+<h2 id="p-gan-gate">p-GaN Gate<a hidden class="anchor" aria-hidden="true" href="#p-gan-gate">#</a></h2>
+<p>Mühendisler Gate terminalinin tam altına p-tipi katkılanmış bir GaN tabakası (p-GaN) yerleştirdiler. p-GaN katmanı, gate altında bulunan yarı iletken katmanların elektriksel potansiyelini değiştirir. Bunun sonucu olarak gate altındaki bölge, elektronlar için artık eskisi kadar elverişli bir enerji bölgesi olmaktan çıkar. Gate&rsquo;e pozitif gerilim verirseniz de 2DEG yeniden kesintisiz hale dönüşür.</p>
+<blockquote>
+<p>Yani source ve drain 2 şehir olsun. 2DEG bunları bağlayan çok hızlı otoyol. p-GaN gate ise yolun ortasındaki bariyer sistemi.</p></blockquote>
+<figure>
+    <img loading="lazy" src="p-gan-gate.png"/> <figcaption>
+            Şekil 4: p-GaN katmanının, kendi altındaki elektronları iterek 2DEG otoyolunu başlangıçta kapalı (Normally-Off) tutması.
+        </figcaption>
+</figure>
+
+<p>Peki <strong>p</strong> neyi temsil ediyor?</p>
+<p>Malzemelere iletkenlik kazandırmak için yapılan katkılara <strong>n-tipi</strong> ve <strong>p-tipi</strong> denilir.</p>
+<blockquote>
+<p>n tipi: Malzemeye dışarıdan elektron eklenmiştir. Ortamda fazladan &ldquo;negatif&rdquo; yük (elektron) vardır.</p></blockquote>
+<blockquote>
+<p>p tipi: Malzemeden elektron koparılmış, geriye elektronun girmesi için bekleyen &ldquo;boşluklar&rdquo; (holes) bırakılmıştır. Ortam davranışsal olarak &ldquo;pozitif&rdquo; yüklüdür.</p></blockquote>
+<p>Burada benim kafam fena yanmıştı o yüzden adım adım gideceğiz.</p>
+<ol>
+<li>
+<p>AlGaN/GaN birleşiminde kutuplaşma (polarizasyon) arayüzde artı yük biriktirir. Bu artı yük, zıt kutup olduğu için civardaki elektronları kendine çeker ve 2DEG&rsquo;i oluşturur.</p>
+</li>
+<li>
+<p>p-tipi GaN&rsquo;de bolca pozitif taşıyıcı (boşluk/hole) vardır. Bu tabaka üste konunca birleşim kurulurken:</p>
+<ul>
+<li>p-GaN&rsquo;deki pozitif boşluklar, alttaki 2DEG elektronlarını kendine çeker</li>
+<li>Elektronlar kanaldan yukarı çekilip boşluklarla rekombine olur (yok olurlar)</li>
+<li>Kapının altındaki otoyol boşalır</li>
+</ul>
+</li>
+<li>
+<p>Denge kurulduktan sonra geriye kalan şey, p-GaN tarafındaki hareketsiz negatif iyonlaşmış acceptor atomlarıdır (Mg⁻). Bu sabit eksi yükler:</p>
+<ul>
+<li>Kutuplaşmanın artı yükünden çıkan elektrik alan hatlarını kendi üzerlerine toplar (alan artık elektrona &ldquo;uzanamaz&rdquo;, yani 2DEG yeniden oluşamaz)</li>
+<li>Kanala girmeye çalışan herhangi bir elektronu, aynı işaretli yük oldukları için, geri iter.</li>
+</ul>
+</li>
+</ol>
+<p>Yani numara şurada: durağan eksi yükü boşlukta tek başına kararlı şekilde tutamazsın; p-tipi malzeme, o negatif sabit yükü oraya &ldquo;park etmenin&rdquo; pilsiz ve kalıcı yoludur.</p>
+<h2 id="zorluklar">Zorluklar<a hidden class="anchor" aria-hidden="true" href="#zorluklar">#</a></h2>
+<p>&ldquo;Peki bu kadar harikaysa neden her tarafta GaN kullanmıyoruz?&rdquo;</p>
+<p>Silikon bazlı MOSFET&rsquo;lere göre hala birim başına 2-6 kat daha pahalılar. Üretim hacimleri hala pek yüksek değil, ölçek ekonomisi oturmadı. GaN her şeye sokabileceğiniz mucize bir çözüm değil kendine uygun alanda parlayan bir yıldız: USB-C şarjları, 5G baz istasyonları, RF güç amplifikatörleri, Veri merkezi PSU&rsquo;ları, elektrikli araç invertörleri gibi.</p>
+<p>Ama nerelerde gereksiz kalıyor? Mikrodenetleyici, CPU, GPU, bellek, basit regülatörler. CPU tarafına bakalım özellikle. Bu arkadaşlar CMOS mantığına dayanır. Bir CMOS kapısı iki tür transistörün eşleşmesidir:</p>
+<ol>
+<li>NMOS: Elektronları taşır (n-tipi). Giriş = 1 ise açılır.</li>
+<li>PMOS: &ldquo;Delikleri&rdquo; (hole) taşır (p-tipi). Giriş = 0 ise açılır.</li>
+</ol>
+<p>CMOS&rsquo;un çalışması için NMOS ve PMOS&rsquo;un birbirine yakın performansta olması gerekir. Biri çok hızlı, diğeri çok yavaşsa devre çalışmaz. Sinyal asimetrik olur, güç tüketimi patlar, hız düşer. Ama bunlarda aradaki fark düşük, 3 kat falan. PMOS transistörü biraz daha geniş yaparak (width ayarı) bu farkı telafi edersin ve ikisi dengeli çalışır.</p>
+<p>GaN tarafında n-tipi ile p-tipi arasındaki fark yuvarlak hesap <strong>70 kat</strong>. PMOS tarafı NMOS&rsquo;a yetişemiyor. Aynı akımı geçirmek için PMOS&rsquo;u 70 kat daha geniş yapman gerekir ki bu çip üzerinde fiziksel olarak imkansız. Çip kocaman olur, güç tüketimi ve gecikme kabul edilemez seviyeye çıkar. Bunun sebebi ne? Wide bandgap. geniş bant aralığı, değerlik bandındaki deliklerin etkin kütlesini (effective mass) çok büyütüyor. Yani delikler (holes) &ldquo;ağırlaşıyor&rdquo; ve zor hareket ediyor. Ayrıca GaN&rsquo;i p-tipi yapmak için magnezyum (Mg) katkılıyoruz, ama bu katkı atomları yeterince aktif olmuyor ve çok yüksek dirençli p-tipi katmanlar elde ediliyor.</p>
+<figure>
+    <img loading="lazy" src="compare1.webp"/> <figcaption>
+            Şekil 5: Güzel bir karşılaştırma tablosu.
+        </figcaption>
+</figure>
+
+<h2 id="gan-on-x">GaN-on-X<a hidden class="anchor" aria-hidden="true" href="#gan-on-x">#</a></h2>
+<p>GaN kristalini büyütmek için altta bir şablon (altlık/substrat) gerekir — tıpkı duvara fayans döşemeden önce düz bir zemin hazırlamak gibi. GaN atomları bu altlığın kristal yapısını taklit ederek sıralanır.</p>
+<p>En ideali GaN-on-GaN olur elbette ama şöyle ifade edeyim: 6 inç (150 mm) saf GaN wafer plaka başına 12.000 dolar+ maliyete falan gelir. Standart 8 inç silikon wafer ise 50 dolar.</p>
+<p>GaN-on-Silicon transistörlerde, silikon ile GaN atomlarının dizilim uyuşmazlığı yüzünden santimetrekarede $10^8$ (100 milyon) civarında yapısal çatlak/hata oluşur. GaN-on-GaN&rsquo;da ise bu hata oranı $10^4$ (10 bin) seviyesine iner. Bu yüzden GaN-on-GaN askeri ve optoelektronik alanlarında maliyetin önemsenmediği durumlarda kullanılır.</p>
+<p>Şu anda etrafınızda gördüğünüz neredeyse bütün güç adaptörleri ise GaN-on-Si ile yapılmıştır. Maliyet fırlamasın diye gofretin (wafer) tabanı tamamen silikondan üretilir. Üzerine kimyasal buhar biriktirme (MOCVD) yöntemiyle atomik seviyede GaN katmanları dizilir. Akım, transistörün içinde üstteki incecik GaN şeridinden akar. Yani silikon burada sadece bir &ldquo;taşıyıcı iskele&rdquo; görevi görür; asıl işi üstteki GaN yapar.</p>
+<p>Buradaki en büyük problem lattice mismatch. Silikon atomları ile GaN atomlarının dizilim aralıkları (geometrisi) birbirinden farklıdır. Bu yüzden silikonun üzerine GaN dizilirken aradaki katmanlarda çatlaklar ve mikroskobik hatalar oluşur. Bu hatalar voltajın 650V - 900V üzerine çıkmasını engeller. Ayrıca silikon ve GaN ısıtıldığında farklı oranlarda genleşir. Çip çok ısınırsa bu katmanlar birbirinden ayrılabilir veya bükülebilir. Termal yönetimi de problemlidir.</p>
+<p>GaN-on-SiC ise bu ikisinin arasında yer alır. Termal iletkenlik sorunları SiC sayesinde çok azalır ve standart silikona kıyasla dizilim uyuşması daha iyidir. 5G baz istasyonu, uçuk maliyetli olmayan jammer falan yapacaksanız bu tam aradığınız eleman.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Mirfolio</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

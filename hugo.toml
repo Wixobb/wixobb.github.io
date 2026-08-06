@@ -1,0 +1,56 @@
+baseURL = "https://wixobb.github.io/"
+title = "Mirfolio"
+theme = "PaperMod"
+languageCode = "en-us"
+
+# Sayfalamayı belirler (Ana sayfada kaç post görünecek)
+[pagination]
+  pagerSize = 5
+
+# Matematik formülleri için KaTeX desteği
+[params.math]
+  enable = true
+
+[params]
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  
+  # İŞTE BURASI: Ana sayfada en üstte çıkacak selamlama ve subtitle
+  [params.homeInfoParams]
+    Title = "Bloguma hoş geldiniz"
+    Content = "Ben Mirsad. Merak edip bir şeyler öğrendiğim konularla ilgili yazıyorum." # Subtitle buraya gelecek
+
+  [params.assets]
+    disableHLJS = false
+
+# İŞTE BURASI: Subtitle'ın hemen altındaki ikonlu linkler
+# Not: PaperMod ikon isimlerini otomatik tanır (github, linkedin, twitter, email vb.)
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/Wixobb"
+[[params.socialIcons]]
+  name = "link"
+  url = "https://oilmesh.vercel.app/"
+
+# Üst Menü Navigasyonu
+[[menu.main]]
+  identifier = "posts"
+  name = "Posts"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "projects"
+  name = "Projects"
+  url = "/projects/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 30
