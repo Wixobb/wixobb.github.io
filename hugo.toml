@@ -1,5 +1,6 @@
-# Project repository Pages URL. Keep the trailing slash for correct links and assets.
-baseURL = "https://wixobb.github.io/mirfolio/"
+# GitHub Pages project URL for Wixobb/mirfolio.github.io.
+# Keep the trailing slash so Hugo generates correct links and asset URLs.
+baseURL = "https://wixobb.github.io/mirfolio.github.io/"
 title = "Mirfolio"
 theme = "PaperMod"
 languageCode = "en-us"
