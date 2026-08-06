@@ -1,7 +1,7 @@
 +++
 title = 'GaN Devrimi'
 date = 2026-07-05T14:20:03+03:00
-draft = true
+draft = false
 math = true
 +++
 
