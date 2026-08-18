@@ -34,6 +34,9 @@ languageCode = "en-us"
 [[params.socialIcons]]
   name = "link"
   url = "https://oilmesh.vercel.app/"
+[[params.socialIcons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/mirsad0x00/"
 
 
 [[menu.main]]
