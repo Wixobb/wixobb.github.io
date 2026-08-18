@@ -22,11 +22,16 @@ languageCode = "en-us"
  
   [params.homeInfoParams]
     Title = "Bloguma hoş geldiniz"
-    Content = "Ben Mirsad. Merak edip bir şeyler öğrendiğim konularla ilgili yazıyorum." # Subtitle buraya gelecek
+    Content = "Ben Mirsad. Merak edip bir şeyler öğrendiğim konularla ilgili yazıyorum." 
 
   [params.assets]
     disableHLJS = false
 
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [[params.socialIcons]]
   name = "github"
